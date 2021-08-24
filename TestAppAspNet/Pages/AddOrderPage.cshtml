@@ -1,0 +1,53 @@
+﻿@page
+@model TestAppAspNet.AddOrderPage
+
+@{
+    ViewData["Title"] = "Добавление заказа";
+}
+
+<form class="form-horizontal" method="post">
+    <h2>Введите данные:</h2>
+        <div class="form-group row">
+            <label class="col-sm-2">Город отправителя</label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Order.SenderCity"/>
+                <span asp-validation-for="@Model.Order.SenderCity" class="error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2">Адрес отправителя</label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Order.SenderAddress"/>
+                <span asp-validation-for="@Model.Order.SenderAddress" class="error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2">Город получателя</label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Order.ReceiverCity"/>
+                <span asp-validation-for="@Model.Order.ReceiverCity" class="error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2">Адрес получателя</label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Order.ReceiverAddress"/>
+                <span asp-validation-for="@Model.Order.ReceiverAddress" class="error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2">Вес (гр.)</label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Order.Weight"/>
+                <span asp-validation-for="@Model.Order.Weight" class="error"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2">Дата</label>
+            <div class="col-sm-10">
+                <input type="date" asp-for="@Model.Order.Date"/>
+                <span asp-validation-for="@Model.Order.Date" class="error"></span>
+            </div>
+        </div>
+        <input type="submit" value="Добавить заказ">
+</form>

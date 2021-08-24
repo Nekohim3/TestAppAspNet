@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Список заказов";
+}
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Город отправителя</th>
+            <th>Адрес отправителя</th>
+            <th>Город получателя</th>
+            <th>Адрес получателя</th>
+            <th>Вес груза (гр.)</th>
+            <th>Дата забора груза</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var order in Model.Orders)
+        {
+            <tr>
+                <td>@order.OrderId</td>
+                <td>@order.SenderCity</td>
+                <td>@order.SenderAddress</td>
+                <td>@order.ReceiverCity</td>
+                <td>@order.ReceiverAddress</td>
+                <td>@order.Weight</td>
+                <td>@order.Date.ToShortDateString()</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
